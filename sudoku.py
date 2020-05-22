@@ -17,6 +17,7 @@ class Sudoku:
         self.sudokuList = [] 
         for i in range(0, 81):
             self.sudokuList.append(-1)
+
         self.fieldClicket = -1
     def getIndex(self, x, y):
         xRow = 0
@@ -45,7 +46,6 @@ class Sudoku:
         realKey = -1 
         
         keyDict = {
-            48: 0,
             49: 1,
             50: 2,
             51: 3,
