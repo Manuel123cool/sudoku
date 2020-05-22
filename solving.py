@@ -86,10 +86,14 @@ class Solve:
         return allNum
     def solveList(self, mylist):
         allNumRe = []
-        for i in range(0, 81):
-            if mylist[i] == -1:
-                allNumRe = self.testOnePos(mylist, i)
-                if len(allNumRe) == 1:
-                    mylist[i] = str(allNumRe[0]) + "s"
-        
+        count = 0
+        newPos = 0
+        while count <= newPos:
+            for i in range(0, 81):
+                if mylist[i] == -1:
+                    allNumRe = self.testOnePos(mylist, i)
+                    if len(allNumRe) == 1:
+                        newPos += 1
+                        mylist[i] = allNumRe[0]
+            count += 1        
         return mylist
